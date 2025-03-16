@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English for Moroccans - Advanced Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+      <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#quiz">Quizzes</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+        /* Global Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #c1272d;
+        }
+
+        a:hover {
+            color: #007e33;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(to right, #c1272d, #007e33);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            color: white;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #005420;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url(OIP.jpg) no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .hero .cta {
+            background: #ffcc00;
+            color: #333;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .hero .cta:hover {
+            background: #c1272d;
+            color: white;
+        }
+
+        /* About Us Section */
+        .about {
+            padding: 50px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .about .content {
+            max-width: 900px;
+            margin: auto;
+            text-align: justify;
+        }
+
+        .about img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        /* Teachers Section */
+        .teachers {
+            background-color: #f9f9f9;
+            padding: 50px;
+        }
+
+        .teachers h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .teacher-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .teacher {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: calc(33% - 30px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .teacher:hover {
+            transform: scale(1.05);
+        }
+
+        .teacher img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .teacher h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .teacher ul {
+            padding-left: 15px;
+        }
+
+        .teacher ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffcc00;
+        }
+
+        footer a:hover {
+            color: #c1272d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">English For Moroccans</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#teachers">Our Teachers</a></li>
+                <li><a href="#lessons">Lessons</a></li>
+                <li><a href="#resources">Student Resources</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div>
+            <h1>Master English with Morocco’s #1 Learning Platform</h1>
+            <p>Join thousands of Moroccan students improving their English skills every day.</p>
+            <a href="#contact" class="cta">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <div class="content">
+            <p>At English For Moroccans, our mission is to provide high-quality, culturally relevant English education to students across Morocco. We understand the unique challenges Moroccan learners face, and we tailor our lessons to bridge the gap between the Moroccan education system and global language standards. Our programs are designed for students, professionals, and anyone passionate about mastering the English language.</p>
+            <img src="work-.jpg" alt="About English for Moroccans">
+        </div>
+    </section>
+
+    <!-- Teachers Section -->
+    <section class="teachers" id="teachers">
+        <h2>Meet Our Professional Teachers</h2>
+        <div class="teacher-list">
+            <div class="teacher">
+                <img src="teacher1.jpg" alt="Mr. Ahmed El Yousfi">
+                <h3>Mr. Ahmed El Yousfi</h3>
+                <ul>
+                    <li><strong>Qualifications:</strong> MA in English Linguistics, University of Rabat</li>
+                    <li><strong>Experience:</strong> 10+ years teaching high school and university students</li>
+                    <li><strong>Specialization:</strong> Exam Preparation (2 Bac, IELTS, TOEFL)</li>
+                </ul>
+            </div>
+            <div class="teacher">
+                <img src="teacher2.jpg" alt="Ms. Fatima Zahra Benali">
+                <h3>Ms. Fatima Zahra Benali</h3>
+                <ul>
+                    <li><strong>Qualifications:</strong> BA in English Literature, University of Casablanca</li>
+                    <li><strong>Experience:</strong> 7+ years teaching middle school students</li>
+                    <li><strong>Specialization:</strong> Reading Comprehension and Literature</li>
+                </ul>
+            </div>
+            <div class="teacher">
+                <img src="teacher3.jpg" alt="Dr. Youssef Amrani">
+                <h3>Dr. Youssef Amrani</h3>
+                <ul>
+                    <li><strong>Qualifications:</strong> PhD in Applied Linguistics, University of Fez</li>
+                    <li><strong>Experience:</strong> 15+ years teaching professionals and university students</li>
+                    <li><strong>Specialization:</strong> Business English and Communication</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Lessons Section -->
+    <section class="lessons" id="lessons">
+        <h2>Our Lessons</h2>
+        <div class="content">
+            <p>We offer a wide range of English lessons tailored to Moroccan students at every level, from beginners to advanced learners. Explore our structured curriculum:</p>
+            <div class="lesson-levels">
+                <div class="level">
+                    <h3>Beginner (A1 - A2)</h3>
+                    <ul>
+                        <li>Basic Vocabulary (Greetings, Family, School)</li>
+                        <li>Introduction to Grammar (Nouns, Verbs, Pronouns)</li>
+                        <li>Simple Conversations</li>
+                        <li>Listening and Speaking Practice</li>
+                    </ul>
+                </div>
+                <div class="level">
+                    <h3>Intermediate (B1 - B2)</h3>
+                    <ul>
+                        <li>Complex Sentences</li>
+                        <li>Reading Short Stories</li>
+                        <li>Writing Paragraphs and Letters</li>
+                        <li>Grammar: Past, Present, and Future Tenses</li>
+                    </ul>
+                </div>
+                <div class="level">
+                    <h3>Advanced (C1 - C2)</h3>
+                    <ul>
+                        <li>Advanced Vocabulary (Academic and Business English)</li>
+                        <li>Essay Writing (Argumentative and Analytical)</li>
+                        <li>Understanding Literature (Poems and Novels)</li>
+                        <li>Exam Preparation (TOEFL, IELTS, 2 Bac)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <style>
+            .lessons {
+                background-color: #fff;
+                padding: 50px;
+                text-align: center;
+            }
+
+            .lessons h2 {
+                font-size: 2.5em;
+                margin-bottom: 20px;
+            }
+
+            .lesson-levels {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .level {
+                background-color: #f9f9f9;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: calc(33% - 30px);
+            }
+
+            .level h3 {
+                font-size: 1.8em;
+                color: #c1272d;
+                margin-bottom: 15px;
+            }
+
+            .level ul {
+                text-align: left;
+                padding-left: 20px;
+            }
+
+            .level ul li {
+                margin-bottom: 10px;
+            }
+        </style>
+    </section>
+
+    <!-- Student Resources Section -->
+    <section class="resources" id="resources">
+        <h2>Student Resources</h2>
+        <div class="content">
+            <p>Take advantage of our free resources to improve your English even faster. Whether you’re preparing for exams or just practicing, we have something for everyone:</p>
+            <ul>
+                <li><strong>Grammar Guides:</strong> Comprehensive explanations and examples.</li>
+                <li><strong>Practice Worksheets:</strong> Exercises for vocabulary, grammar, and writing.</li>
+                <li><strong>Audio Lessons:</strong> Improve your listening skills with recorded dialogues.</li>
+                <li><strong>Reading Material:</strong> Short stories, articles, and poetry.</li>
+                <li><strong>Mock Exams:</strong> Practice tests for TOEFL, IELTS, and 2 Bac.</li>
+            </ul>
+            <a href="#contact" class="cta">Request Free Resources</a>
+        </div>
+        <style>
+            .resources {
+                background-color: #f5f5f5;
+                padding: 50px;
+                text-align: center;
+            }
+
+            .resources ul {
+                max-width: 700px;
+                margin: auto;
+                text-align: left;
+                padding-left: 20px;
+            }
+        </style>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <h2>Pricing and Plans</h2>
+        <div class="content">
+            <p>We offer flexible pricing options to make English learning accessible for everyone. Choose the plan that works best for you:</p>
+            <div class="price-plans">
+                <div class="plan">
+                    <h3>Basic Plan</h3>
+                    <p>150 MAD / month</p>
+                    <ul>
+                        <li>Access to beginner lessons</li>
+                        <li>Free resources</li>
+                        <li>Email support</li>
+                    </ul>
+                </div>
+                <div class="plan">
+                    <h3>Standard Plan</h3>
+                    <p>300 MAD / month</p>
+                    <ul>
+                        <li>Access to all lessons</li>
+                        <li>Live group classes</li>
+                        <li>Priority email and chat support</li>
+                    </ul>
+                </div>
+                <div class="plan">
+                    <h3>Premium Plan</h3>
+                    <p>500 MAD / month</p>
+                    <ul>
+                        <li>One-on-one private tutoring</li>
+                        <li>Personalized learning plan</li>
+                        <li>Exclusive resources and mock exams</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <style>
+            .pricing {
+                background-color: #fff;
+                padding: 50px;
+                text-align: center;
+            }
+
+            .price-plans {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .plan {
+                background-color: #f9f9f9;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: calc(33% - 30px);
+            }
+
+            .plan h3 {
+                font-size: 1.8em;
+                color: #007e33;
+                margin-bottom: 10px;
+            }
+
+            .plan p {
+                font-size: 1.2em;
+                color: #c1272d;
+                margin-bottom: 15px;
+            }
+
+            .plan ul {
+                text-align: left;
+                padding-left: 20px;
+            }
+        </style>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <h2>Our Blog</h2>
+        <div class="content">
+            <p>Stay updated with tips and tricks for learning English, cultural topics, and success stories from our students:</p>
+            <div class="blog-posts">
+                <div class="post">
+                    <h3>5 Tips to Master English Grammar</h3>
+                    <p>Struggling with grammar? Check out our top tips for mastering grammar rules.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="post">
+                    <h3>How English Can Boost Your Career</h3>
+                    <p>Discover how learning English can open doors to new job opportunities.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+        <style>
+            .blog {
+                background-color: #f5f5f5;
+                padding: 50px;
+                text-align: center;
+            }
+
+            .blog-posts {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .post {
+                background: #fff;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: calc(50% - 30px);
+            }
+
+            .post a {
+                color: #007e33;
+                font-weight: bold;
+            }
+        </style>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <div class="content">
+            <p>If you have any questions or want to get started, we’d love to hear from you. Reach out to us through the following channels:</p>
+            <ul>
+                <li>Email: <a href="mailto:info@englishformoroccans.com">info@englishformoroccans.com</a></li>
+                <li>Phone: +212 600 000 000</li>
+                <li>Location: Fes, Morocco</li>
+            </ul>
+            <form>
+                <label for="name">Your Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Enter your name"><br>
+                <label for="email">Your Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email"><br>
+                <label for="message">Your Message:</label><br>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message"></textarea><br>
+                <button type="submit" class="cta">Send Message</button>
+            </form>
+        </div>
+        <style>
+            .contact {
+                background-color: #fff;
+                padding: 50px;
+                text-align: center;
+            }
+
+            .contact form {
+                max-width: 600px;
+                margin: 20px auto;
+            }
+
+            .contact input, .contact textarea {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            .contact button {
+                background: #c1272d;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-size: 1em;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            .contact button:hover {
+                background: #007e33;
+            }
+        </style>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 English For Moroccans. All Rights Reserved.</p>
+        <p>Designed with ❤️ in Morocco.</p>
+ 
